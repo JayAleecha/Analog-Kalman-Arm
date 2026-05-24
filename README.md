@@ -108,14 +108,14 @@ Perfect for:
 
 # 🧠 Kalman Filter Motion Smoothing
 
-This project uses a lightweight Kalman Filter to smooth noisy analog readings.
+This project uses a lightweight **Kalman Filter** to reduce analog noise from potentiometers and create smoother servo movement.
 
-## ✅ Benefits
+## ✨ Benefits
 
-- smoother servo movement
-- reduced jitter
-- stable positioning
-- responsive control
+- 🎯 More stable positioning
+- 🧹 Reduced servo jitter
+- ⚡ Smooth real-time response
+- 🤖 Better control precision
 
 ---
 
@@ -123,45 +123,95 @@ This project uses a lightweight Kalman Filter to smooth noisy analog readings.
 
 ```cpp
 KalmanFilter wristFilter = {0, 1, 25, 0.4};
+```
 
-Parameter	Effect
-processNoise ↑	Faster response
-errorMeasure ↑	Smoother motion
-⚙️ Servo Pulse Configuration
+| Parameter | Description |
+|:--|:--|
+| `processNoise ↑` | Faster response and quicker movement tracking |
+| `errorMeasure ↑` | Smoother motion with increased filtering |
+
+---
+
+# ⚡ Servo Pulse Configuration
+
+```cpp
 #define SERVOMIN 125
 #define SERVOMAX 725
+```
 
-Adjust these values depending on your servo specifications.
+> Adjust these values depending on your servo specifications and motion range.
 
-🚀 Getting Started
-1️⃣ Clone Repository
+---
+
+# 🚀 Getting Started
+
+## 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/JayAleecha/Analog-Kalman-Arm.git
-2️⃣ Open with PlatformIO
+```
 
-Open the project using:
+---
 
-VS Code
-PlatformIO Extension
-3️⃣ Install Dependencies
+## 2️⃣ Open with PlatformIO
 
-PlatformIO automatically installs libraries from:
+Open the project folder using:
 
+- 💻 VS Code
+- 🔧 PlatformIO Extension
+
+---
+
+## 3️⃣ Install Dependencies
+
+PlatformIO automatically installs required libraries from:
+
+```ini
 lib_deps =
     adafruit/Adafruit PWM Servo Driver Library
-4️⃣ Upload Firmware
+```
+
+---
+
+## 4️⃣ Upload Firmware
+
+Upload code to ESP32:
+
+```bash
 pio run --target upload
+```
 
 Open Serial Monitor:
 
+```bash
 pio device monitor
-📟 Serial Monitor Output
+```
+
+---
+
+# 📟 Serial Monitor Output
+
+Example output:
+
+```text
 Wrist=90 | Elbow=120 | Shoulder=75 | Base=45 | Hand=OPEN
-🎮 Controls
-Action	Result
-🎛 Rotate Potentiometer	Move corresponding joint
-🔘 Press Button	Open gripper
-🔘 Release Button	Close gripper
-📂 Project Structure
+```
+
+---
+
+# 🎮 Controls
+
+| Action | Result |
+|:--|:--|
+| 🎛 Rotate Potentiometer | Move corresponding servo joint |
+| 🔘 Press Button | Open gripper |
+| 🔘 Release Button | Close gripper |
+
+---
+
+# 📂 Project Structure
+
+```text
 .
 ├── src/
 │   └── main.cpp
@@ -170,36 +220,55 @@ Action	Result
 ├── platformio.ini
 ├── README.md
 └── .gitignore
-🔋 Power Recommendation
+```
 
-⚠️ Do NOT power servos directly from the ESP32.
+---
 
-✅ Recommended Setup
-External 5V power supply
-Common GND between ESP32 and servos
-🧩 Future Improvements
-🤖 Inverse Kinematics
-📡 Wireless Control
-🌐 Web Dashboard
-🧠 Motion Recording
-📺 OLED Display UI
-🎯 PID Control
-🤝 ROS Integration
-📜 License
+# 🔋 Power Recommendation
 
-This project is licensed under the MIT License.
+> ⚠️ Do NOT power servos directly from the ESP32.
 
-⭐ Support
+## ✅ Recommended Setup
+
+- 🔌 External 5V power supply
+- 🔗 Common GND between ESP32 and servo power supply
+
+---
+
+# 🧩 Future Improvements
+
+- 🤖 Inverse Kinematics
+- 📡 Wireless Control
+- 🌐 Web Dashboard
+- 🧠 Motion Recording & Playback
+- 📺 OLED Display Interface
+- 🎯 PID Control
+- 🤝 ROS Integration
+
+---
+
+# 📜 License
+
+This project is released under the **MIT License**.
+
+---
+
+# ⭐ Support
 
 If you like this project:
 
-⭐ Star the repository
-🍴 Fork the project
-🛠 Contribute improvements
+- ⭐ Star the repository
+- 🍴 Fork the project
+- 🛠 Contribute improvements
+
+---
+
 <div align="center">
-👨‍💻 Author
 
-Developed with ❤️ using ESP32 + PlatformIO
+# 👨‍💻 Author
 
-by JayAleecha
-</div> ```
+Developed with ❤️ using **ESP32 + PlatformIO**
+
+### by JayAleecha
+
+</div>
