@@ -123,3 +123,83 @@ This project uses a lightweight Kalman Filter to smooth noisy analog readings.
 
 ```cpp
 KalmanFilter wristFilter = {0, 1, 25, 0.4};
+
+Parameter	Effect
+processNoise ↑	Faster response
+errorMeasure ↑	Smoother motion
+⚙️ Servo Pulse Configuration
+#define SERVOMIN 125
+#define SERVOMAX 725
+
+Adjust these values depending on your servo specifications.
+
+🚀 Getting Started
+1️⃣ Clone Repository
+git clone https://github.com/JayAleecha/Analog-Kalman-Arm.git
+2️⃣ Open with PlatformIO
+
+Open the project using:
+
+VS Code
+PlatformIO Extension
+3️⃣ Install Dependencies
+
+PlatformIO automatically installs libraries from:
+
+lib_deps =
+    adafruit/Adafruit PWM Servo Driver Library
+4️⃣ Upload Firmware
+pio run --target upload
+
+Open Serial Monitor:
+
+pio device monitor
+📟 Serial Monitor Output
+Wrist=90 | Elbow=120 | Shoulder=75 | Base=45 | Hand=OPEN
+🎮 Controls
+Action	Result
+🎛 Rotate Potentiometer	Move corresponding joint
+🔘 Press Button	Open gripper
+🔘 Release Button	Close gripper
+📂 Project Structure
+.
+├── src/
+│   └── main.cpp
+├── include/
+├── lib/
+├── platformio.ini
+├── README.md
+└── .gitignore
+🔋 Power Recommendation
+
+⚠️ Do NOT power servos directly from the ESP32.
+
+✅ Recommended Setup
+External 5V power supply
+Common GND between ESP32 and servos
+🧩 Future Improvements
+🤖 Inverse Kinematics
+📡 Wireless Control
+🌐 Web Dashboard
+🧠 Motion Recording
+📺 OLED Display UI
+🎯 PID Control
+🤝 ROS Integration
+📜 License
+
+This project is licensed under the MIT License.
+
+⭐ Support
+
+If you like this project:
+
+⭐ Star the repository
+🍴 Fork the project
+🛠 Contribute improvements
+<div align="center">
+👨‍💻 Author
+
+Developed with ❤️ using ESP32 + PlatformIO
+
+by JayAleecha
+</div> ```
